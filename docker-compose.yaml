@@ -1,0 +1,20 @@
+﻿services:
+  db:
+    image: postgres
+    container_name: financeapi-db
+    restart: unless-stopped
+    shm_size: 128mb
+
+    environment:
+      POSTGRES_DB: finance
+      POSTGRES_USER: financeuser
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data:

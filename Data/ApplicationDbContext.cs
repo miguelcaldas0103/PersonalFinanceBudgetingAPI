@@ -9,10 +9,5 @@ namespace FinanceTrackingAPI.Data
         { }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Income> Incomes { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("");
-        }
     }
 }
